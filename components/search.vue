@@ -6,6 +6,7 @@
         <button @click="search" class="search-user-description">Seacrh</button>
       </div>
     </div>
+
     <div v-if="isFind" class="search-nothing">There is nothing</div>
     <div v-if="searchData.length > 0" class="search-data">
       <MainTable :users="searchData" :currentPage="currentPage" />
@@ -32,10 +33,14 @@ const search = () => {
   users.value.forEach((user: IUsers) => {
     if (user.name.includes(searchText.value)) {
       searchData.value.push(user);
-      isFind.value = false;
     }
-    isFind.value = true;
   });
+  console.log(searchData.value.length);
+  if (searchData.value.length !== 0) {
+    isFind.value = false;
+  } else {
+    isFind.value = true;
+  }
 };
 </script>
 <style lang="scss" scoped>
