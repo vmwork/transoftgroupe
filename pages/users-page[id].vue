@@ -5,11 +5,16 @@
     </div>
     <div v-else>
       <div class="main">
-        <MainTable
-          :users="usersOnPage"
-          :pages="pages"
-          :currentPage="currentPage"
-        />
+        <div>
+          <Search />
+        </div>
+        <div>
+          <MainTable
+            :users="usersOnPage"
+            :pages="pages"
+            :currentPage="currentPage"
+          />
+        </div>
       </div>
     </div>
   </div>

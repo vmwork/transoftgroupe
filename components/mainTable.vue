@@ -30,8 +30,6 @@
 </template>
 
 <script setup lang="ts">
-import UseGetUsers from '~/composables/UseGetUsers';
-
 const props = defineProps({
   users: {
     type: Array,
@@ -53,7 +51,7 @@ const props = defineProps({
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 50px;
+  padding-top: 50px;
 }
 .table-header,
 .table-users {
